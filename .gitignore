@@ -1,0 +1,29 @@
+# Build Folders (you can keep bin/ and obj/ locally if needed)
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio specific files
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+
+# ASP.NET Core specific
+wwwroot/node_modules/
+wwwroot/lib/
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored if using PackageReference in your project file
+packages/
+
+# Logs and databases
+*.log
+*.mdf
+*.ldf
+
+# Temporary files created by Visual Studio
+*.tmp
+*.temp
+*.bak

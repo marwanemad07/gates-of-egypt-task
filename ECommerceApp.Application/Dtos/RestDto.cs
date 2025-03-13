@@ -10,6 +10,14 @@
             Details = details ?? new List<string>();
         }
 
+        public RestDto(int statusCode, RestDto<T> dto) 
+        {
+            StatusCode = statusCode;
+            Message = GetMessageBasedOnStatusCode(statusCode);
+            Data = dto.Data;
+            Details = dto.Details;
+        }
+
         public int StatusCode { get; private set; }
         public string? Message { get; private set; }
         public T? Data { get; private set; }

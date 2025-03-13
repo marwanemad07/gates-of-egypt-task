@@ -38,6 +38,8 @@
                 return new RestDto<UserDto>(500, message: "User was created but could not be retrieved");
             }
 
+            // User Created
+            restDto = new RestDto<UserDto>(201, restDto.Data, "User was created successfuly.");
             return restDto;
         }
 

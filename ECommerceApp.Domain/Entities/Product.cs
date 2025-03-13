@@ -5,6 +5,7 @@
     {
         [Required]
         [Column(TypeName = "decimal(18,2)")]
+        [Range(0, double.MaxValue)]
         public decimal Price { get; set; }
 
         [Required]

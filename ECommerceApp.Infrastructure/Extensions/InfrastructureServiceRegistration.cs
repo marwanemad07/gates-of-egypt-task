@@ -15,6 +15,7 @@
             services.AddSingleton<JwtTokenGenerator>();
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
             return services;

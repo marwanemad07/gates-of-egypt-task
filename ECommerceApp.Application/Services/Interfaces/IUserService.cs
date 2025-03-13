@@ -1,7 +1,4 @@
-﻿using ECommerceApp.Application.Dtos;
-using ECommerceApp.Domain.Entities;
-
-namespace ECommerceApp.Application.Services.Interfaces
+﻿namespace ECommerceApp.Application.Services.Interfaces
 {
     public interface IUserService
     {

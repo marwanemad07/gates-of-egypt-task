@@ -1,6 +1,4 @@
-﻿using ECommerceApp.Domain.Entities;
-using System;
-namespace ECommerceApp.Application.Interfaces
+﻿namespace ECommerceApp.Application.Interfaces
 {
     public interface IUserRepository : IGenericRepository<User>
     {

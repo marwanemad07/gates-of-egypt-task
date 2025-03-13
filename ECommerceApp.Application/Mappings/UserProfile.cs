@@ -1,4 +1,4 @@
-﻿namespace ECommerceApp.Application.Mappings
+﻿ namespace ECommerceApp.Application.Mappings
 {
     public class UserProfile : Profile
     {

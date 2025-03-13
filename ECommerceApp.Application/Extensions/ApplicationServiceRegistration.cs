@@ -9,6 +9,7 @@ namespace ECommerceApp.Application.Extensions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductTranslationService, ProductTranslationService>();
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             return services;

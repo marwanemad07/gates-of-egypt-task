@@ -2,31 +2,12 @@
 {
     public class RestDto<T>
     {
-        public RestDto(int statusCode)
+        public RestDto(int statusCode, T? data = default, string? message = null, List<string>? details = null)
         {
             StatusCode = statusCode;
-            Message = GetMessageBasedOnStatusCode(statusCode);
-        }
-        public RestDto(int statusCode, T data)
-        {
-            StatusCode = statusCode;
-            Message = GetMessageBasedOnStatusCode(statusCode);
-            Data = data;
-        }
-
-        public RestDto(int statusCode, T data, string message)
-        {
-            StatusCode = statusCode;
-            Data = data;
-            Message = message;
-        }
-
-        public RestDto(int statusCode, T data, string? message, List<string> details)
-        {
-            StatusCode = statusCode;
-            Data = data;
             Message = message ?? GetMessageBasedOnStatusCode(statusCode);
-            Details = details;
+            Data = data;
+            Details = details ?? new List<string>();
         }
 
         public int StatusCode { get; private set; }

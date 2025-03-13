@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using ECommerceApp.Application.Dtos;
+using System.Text.Json;
 
 namespace ECommerceApp.API.Middlewares
 {
@@ -28,7 +29,8 @@ namespace ECommerceApp.API.Middlewares
                     new RestDto<int?>(StatusCodes.Status500InternalServerError,
                     null,
                     ex.Message,
-                    new List<string> { ex.StackTrace?.ToString() ?? "Stacktrace is null" }) :
+                    new List<string> { ex.StackTrace?.ToString() ?? "Stacktrace is null" })
+                    :
                     new RestDto<int?>(StatusCodes.Status500InternalServerError,
                     null,
                     "Something went wrong");

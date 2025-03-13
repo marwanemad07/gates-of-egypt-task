@@ -1,0 +1,11 @@
+﻿global using System.ComponentModel.DataAnnotations;
+global using ECommerceApp.Application.Dtos;
+global using ECommerceApp.Application.Interfaces;
+global using ECommerceApp.Application.Services.Interfaces;
+global using ECommerceApp.Domain.Entities;
+global using System.Security.Cryptography;
+global using System.Text;
+global using ECommerceApp.Application.Services.Implementations;
+global using Microsoft.Extensions.DependencyInjection;
+global using AutoMapper;
+global using ECommerceApp.Application.Mappings.Resolvers;

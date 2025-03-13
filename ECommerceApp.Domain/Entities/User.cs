@@ -14,7 +14,9 @@
         
         [Required]
         public string PasswordHash { get; set; }
-        
+
+        public bool IsDeleted { get; set; } = false;
+
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
      
         public List<Cart> Carts { get; set; }

@@ -1,15 +1,24 @@
+using ECommerceApp.API.Middlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.RegisterDbContext(builder.Configuration);
+
+builder.Services.AddInfrastructureServices(builder.Configuration)
+    .AddApplicationServices();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.ConfigureAuthentication(builder.Configuration);
+builder.Services.ConfigureSwagger();
+
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlerMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -20,6 +29,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
+app.UseMiddleware<AuthMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();

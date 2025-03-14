@@ -9,13 +9,14 @@
             _jwtSettings = jwtSettings.Value;
         }
 
-        public string GenerateToken(Guid userId, string email)
+        public string GenerateToken(Guid userId, string email, string role)
         {
             Console.WriteLine("Generating token for user: " + userId);
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
                 new Claim(ClaimTypes.Email, email),
+                new Claim(ClaimTypes.Role, role),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
 

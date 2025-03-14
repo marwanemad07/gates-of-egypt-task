@@ -27,7 +27,8 @@
             {
                 Email = dto.Email,
                 FullName = dto.FullName,
-                PasswordHash = HashPassword(dto.Password)
+                PasswordHash = HashPassword(dto.Password),
+                Role = UserRole.User 
             };
 
             await _userRepository.AddAsync(user);
@@ -54,6 +55,8 @@
             var userDto = _mapper.Map<AuthUserDto>(user);
             return new RestDto<AuthUserDto>(200, userDto);
         }
+
+        // TODO: may to be moved to Helper functions
         public static string HashPassword(string password)
         {
             using var sha256 = SHA256.Create();

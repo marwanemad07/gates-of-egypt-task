@@ -13,7 +13,8 @@
                     Id = Guid.NewGuid(),
                     FullName = "Admin",
                     Email = "admin@admin.com",
-                    PasswordHash = passwordHash
+                    PasswordHash = passwordHash,
+                    Role = UserRole.Admin
                 };
 
                 await context.Users.AddAsync(adminUser);

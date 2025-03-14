@@ -11,7 +11,7 @@
 
         public string Resolve(User source, UserDto destination, string destMember, ResolutionContext context)
         {
-            var token = _jwtGenerator.GenerateToken(source.Id, source.Email);
+            var token = _jwtGenerator.GenerateToken(source.Id, source.Email, source.Role.ToString());
             return token;
         }
     }

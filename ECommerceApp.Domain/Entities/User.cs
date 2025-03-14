@@ -23,7 +23,10 @@
 
         [Column("created_at")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-     
+
+        [Column("role")]
+        public UserRole Role { get; set; }
+
         public List<Cart> Carts { get; set; }
     }
 }

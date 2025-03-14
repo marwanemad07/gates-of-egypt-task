@@ -10,3 +10,4 @@ global using ECommerceApp.API.Middlewares;
 global using ECommerceApp.Infrastructure;
 global using Microsoft.EntityFrameworkCore;
 global using ECommerceApp.Infrastructure.Data;
+global using ECommerceApp.Domain.Enums;

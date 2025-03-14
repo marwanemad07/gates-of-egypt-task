@@ -9,3 +9,4 @@ global using ECommerceApp.Application.Services.Implementations;
 global using Microsoft.Extensions.DependencyInjection;
 global using AutoMapper;
 global using ECommerceApp.Application.Mappings.Resolvers;
+global using ECommerceApp.Domain.Enums;

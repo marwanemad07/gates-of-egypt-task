@@ -14,6 +14,12 @@ namespace ECommerceApp.Infrastructure
             base.OnModelCreating(modelBuilder);
 
             // we may use configurations here, but for now, i'm using data annotations
+            modelBuilder.Entity<User>()
+                .Property(u => u.Role)
+                .HasConversion(
+                    r => r.ToString(),
+                    r => (UserRole)Enum.Parse(typeof(UserRole), r)
+                );
         }
 
         public DbSet<User> Users { get; set; }

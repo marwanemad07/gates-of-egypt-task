@@ -12,8 +12,7 @@
         }
 
         [HttpPost]
-        [Authorize]
-        // TODO: Need to be authorized and check if the user is an admin
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> AddProductAsync(NewProductDto dto)
         {
             var result = await _productService.AddProductAsync(dto);
@@ -35,6 +34,7 @@
         }
 
         [HttpPatch("{id}")]
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> UpdateProductAsync(Guid id, NewProductDto dto)
         {
             var result = await _productService.UpdateProductAsync(id, dto);
@@ -42,6 +42,7 @@
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = nameof(UserRole.Admin))]
         public async Task<IActionResult> DeleteProductAsync(Guid id)
         {
             var result = await _productService.DeleteProductAsync(id);

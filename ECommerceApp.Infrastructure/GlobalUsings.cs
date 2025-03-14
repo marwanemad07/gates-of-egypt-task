@@ -11,3 +11,4 @@ global using Microsoft.IdentityModel.Tokens;
 global using ECommerceApp.Infrastructure.Auth;
 global using ECommerceApp.Domain.Entities;
 global using ECommerceApp.Application.Services.Implementations;
+global using ECommerceApp.Domain.Enums;

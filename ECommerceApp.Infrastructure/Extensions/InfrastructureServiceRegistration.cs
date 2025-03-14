@@ -4,7 +4,7 @@
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration cfg)
         {
-            string connectionString = cfg.GetConnectionString("DockerConnection");
+            string connectionString = cfg.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseNpgsql(connectionString);

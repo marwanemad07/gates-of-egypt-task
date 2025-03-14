@@ -8,6 +8,8 @@ services:
     ports:
       - "5000:5000"
       - "5001:5001"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=ecommerceapp.database;Port=5432;Database=ecommerceapp;Username=postgres;Password=postgres
   ecommerceapp.database:
     image: postgres:latest
     container_name: ecommerceapp.database

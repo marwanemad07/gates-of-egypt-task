@@ -13,7 +13,7 @@
 
         public async Task<T> GetByIdAsync(Guid id) => await _dbSet.FindAsync(id);
 
-        public async Task<IEnumerable<T>> GetAllAsync() => await _dbSet.ToListAsync();
+        public async Task<IEnumerable<T>> GetAllAsync() => await _dbSet.AsNoTracking().ToListAsync();
 
         public async Task AddAsync(T entity)
         {

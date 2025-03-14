@@ -80,5 +80,37 @@ namespace ECommerceApp.API.Extensions
                 });
             });
         }
+
+        public static void HandleModelStateErrors(this IServiceCollection services)
+        {
+            services.Configure<ApiBehaviorOptions>(opt => {
+                opt.InvalidModelStateResponseFactory = actionContext =>
+                {
+                    var errors = actionContext.ModelState
+                        .Where(e => e.Value.Errors.Count > 0)
+                        .SelectMany(e => e.Value.Errors)
+                        .Select(e => e.ErrorMessage)
+                        .ToList();
+
+                    var errorResponse = new RestDto<int?>(StatusCodes.Status400BadRequest, null, null, errors);
+
+                    return new BadRequestObjectResult(errorResponse);
+                };
+            });
+        }
+
+        public static void AddAppCors(this IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                // Allow any for now
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder.AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowAnyOrigin();
+                });
+            });
+        }
     }
 }

@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.ConfigureAuthentication(builder.Configuration);
 builder.Services.ConfigureSwagger();
 
+builder.Services.AddAppCors();
 
 var app = builder.Build();
 
@@ -26,6 +27,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
 
 app.UseAuthentication();
 app.UseMiddleware<AuthMiddleware>();

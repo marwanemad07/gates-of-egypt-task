@@ -40,8 +40,6 @@
         {
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (userId == null || userId != id.ToString()){
-                Console.WriteLine("userId " +  userId);
-                Console.WriteLine("id " + id.ToString());
                 var badRequestDto = new RestDto<bool>(400);
                 return StatusCode(badRequestDto.StatusCode, badRequestDto);
             }

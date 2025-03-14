@@ -19,7 +19,7 @@ namespace ECommerceApp.API.Middlewares
             if (context.Response.StatusCode == StatusCodes.Status401Unauthorized)
             {
                 context.Response.ContentType = "application/json";
-                var response = new RestDto<UserDto?>(StatusCodes.Status401Unauthorized, null);
+                var response = new RestDto<UserDto?>(StatusCodes.Status401Unauthorized);
 
                 var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
                 var json = JsonSerializer.Serialize(response, options);

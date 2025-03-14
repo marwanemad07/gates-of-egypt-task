@@ -17,6 +17,8 @@
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductTranslationRepository, ProductTranslationRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
+            services.AddScoped<ICartItemsRepository, CartItemsRepository>();
 
             services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
             return services;

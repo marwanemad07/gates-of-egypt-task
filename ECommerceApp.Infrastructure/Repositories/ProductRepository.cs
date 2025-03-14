@@ -1,6 +1,4 @@
-﻿using ECommerceApp.Domain.Entities;
-
-namespace ECommerceApp.Infrastructure.Repositories
+﻿namespace ECommerceApp.Infrastructure.Repositories
 {
     public class ProductRepository : GenericRepository<Product>, IProductRepository
     {

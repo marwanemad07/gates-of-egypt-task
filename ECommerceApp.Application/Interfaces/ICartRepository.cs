@@ -1,6 +1,7 @@
 ﻿namespace ECommerceApp.Application.Interfaces
 {
-    public interface ICartRepository
+    public interface ICartRepository : IGenericRepository<Cart>
     {
+        public Task<Cart?> GetCartByUserIdAsync(Guid userId);
     }
 }

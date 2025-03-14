@@ -1,0 +1,22 @@
+services:
+  ecommerceapp.api:
+    image: ${DOCKER_REGISTRY-}ecommerceappapi
+    container_name: ecommerceapp.api
+    build:
+      context: .
+      dockerfile: ECommerceApp.API/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+  ecommerceapp.database:
+    image: postgres:latest
+    container_name: ecommerceapp.database
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=ecommerceapp
+    ports:
+      - "5432:5432"  
+    volumes:
+      - ${APPDATA}/PostgreSQL:/var/lib/postgresql/data
+        

@@ -6,3 +6,6 @@ global using Microsoft.AspNetCore.Mvc;
 global using ECommerceApp.Application.Dtos;
 global using Microsoft.AspNetCore.Authorization;
 global using System.Security.Claims;
+global using ECommerceApp.API.Middlewares;
+global using ECommerceApp.Infrastructure;
+global using Microsoft.EntityFrameworkCore;

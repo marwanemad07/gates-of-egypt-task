@@ -12,6 +12,8 @@
         }
 
         [HttpPost]
+        [Authorize]
+        // TODO: Need to be authorized and check if the user is an admin
         public async Task<IActionResult> AddProductAsync(NewProductDto dto)
         {
             var result = await _productService.AddProductAsync(dto);

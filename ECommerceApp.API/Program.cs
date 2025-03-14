@@ -36,10 +36,19 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
+using var scope = app.Services.CreateScope();
+
+try
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    dbContext.Database.Migrate();
+    await dbContext.Database.MigrateAsync();
+
+    await DbSeeder.SeedData(dbContext);
+}
+catch (Exception ex)
+{
+    //TODO: use serilog to log the errors here
+    throw;
 }
 
 app.Run();

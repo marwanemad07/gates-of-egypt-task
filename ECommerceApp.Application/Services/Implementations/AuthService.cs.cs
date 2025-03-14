@@ -54,14 +54,14 @@
             var userDto = _mapper.Map<AuthUserDto>(user);
             return new RestDto<AuthUserDto>(200, userDto);
         }
-        private static string HashPassword(string password)
+        public static string HashPassword(string password)
         {
             using var sha256 = SHA256.Create();
             var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
             return Convert.ToBase64String(hashedBytes);
         }
 
-        private static bool VerifyPassword(string password, string hashedPassword)
+        public static bool VerifyPassword(string password, string hashedPassword)
         {
             return HashPassword(password) == hashedPassword;
         }

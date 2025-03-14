@@ -9,3 +9,4 @@ global using System.Security.Claims;
 global using ECommerceApp.API.Middlewares;
 global using ECommerceApp.Infrastructure;
 global using Microsoft.EntityFrameworkCore;
+global using ECommerceApp.Infrastructure.Data;

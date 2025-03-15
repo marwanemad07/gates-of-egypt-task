@@ -13,7 +13,7 @@ ECommerceApp is a backend API for an e-commerce platform built using **ASP.NET C
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/marwanemad07/ECommerceApp.git
+git clone https://github.com/marwanemad07/gates-of-egypt-task.git
 cd ECommerceApp
 ```
 
